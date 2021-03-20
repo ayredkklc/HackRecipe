@@ -28,7 +28,7 @@ def list_recipes():
             recipe[i] = ing[i]['text']
             count += 1
             print(recipe[i])
-        if(count <= numberOfIngredients):
+        #if(count <= numberOfIngredients):
 
 
         print()
