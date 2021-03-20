@@ -18,25 +18,40 @@ def list_recipes():
 
     for hit in hits_dictionary:
         recipe_dictionary = hit['recipe']
-        print(recipe_dictionary['label'])
 
         ing = recipe_dictionary['ingredients']
         count = 0
-
-        recipe = [0] * len(ing)
+        recipe = []
         for i in range(len(ing)):
-            recipe[i] = ing[i]['text']
-            count += 1
-            print(recipe[i])
+            if ing[i]['text'] not in recipe:
+                recipe.append(ing[i]['text'])
+                #count += 1
+
+        for x in yourIngredients:
+            for y in range(len(recipe)):
+                if x in recipe[y]:
+                    count+=1
+                    break
+                else:
+                    continue
+
+        if count == len(yourIngredients):
+            print()
+            print(recipe_dictionary['label'])
+
+            for i in recipe:
+                print(i)
+
+
         #if(count <= numberOfIngredients):
 
 
-        print()
 
-        '''for ing in recipe_dictionary['ingredients']:
+
+    '''for ing in recipe_dictionary['ingredients']:
             ing = recipe_dictionary['ingredients']'''
 
-        '''if ingredientwehave.input in ing:
+    '''if ingredientwehave.input in ing:
             print
             "found"'''
 
