@@ -4,6 +4,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 import numpy as np
+from py_edamam import Edamam
 
 
 def print_hi(name):
@@ -12,10 +13,14 @@ def print_hi(name):
     x = np.abs(-3)
     print(x)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('Dipen')
-    print_hi('Kai')
+e = Edamam(nutrition_appid="d3356159",
+           nutrition_appkey="27ca905147c4ac5ae81237abe28fd4fa",
+           recipes_appid="5ec2cdca",
+           recipes_appkey="befd603a804a4161f79724e7159b6973",
+           food_appid="2bb3ad55",
+           food_appkey="11c4a78b112cea34fda5b6b0c96e20a8")
+
+input('Please enter ingredients: ')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
