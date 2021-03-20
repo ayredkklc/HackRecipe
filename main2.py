@@ -3,7 +3,7 @@ from py_edamam import PyEdamam, Edamam
 e = Edamam()
 '''data = e.search_recipe("onion")
 hits_dictionary = data['hits']'''
-mainmenu = input('What are you craving right now?')
+ingredientWeHave = input('Which ingredients do you have? ')
 
 yourIngredients = [item for item in input("Enter the ingredients that you want to use : ").split()]
 
@@ -13,7 +13,7 @@ print()
 
 
 def list_recipes():
-    data = e.search_recipe(mainmenu)
+    data = e.search_recipe(ingredientWeHave)
     hits_dictionary = data['hits']
 
     for hit in hits_dictionary:
@@ -28,6 +28,7 @@ def list_recipes():
             recipe[i] = ing[i]['text']
             count += 1
             print(recipe[i])
+        #if(count <= numberOfIngredients):
 
 
         print()
