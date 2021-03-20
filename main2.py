@@ -5,7 +5,7 @@ e = Edamam()
 hits_dictionary = data['hits']'''
 ingredientWeHave = input('Which ingredients do you have? ')
 
-numberOfIngredients = input('Enter the total number of ingredients you want to use: ')
+yourIngredients = [item for item in input("Enter the ingredients that you want to use : ").split()]
 
 #numbr= input('how many recipes d o')
 print('Recipes that match your ingredient ')
