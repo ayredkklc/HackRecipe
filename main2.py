@@ -28,22 +28,22 @@ def list_recipes():
         for x in yourIngredients:
             for y in range(len(recipe)):
                 if x in recipe[y]:
-                    count+=1
+                    count += 1
                     break
                 else:
                     continue
 
         if count == len(yourIngredients):
-            print(recipe_dictionary['label'])
+            if not recipe_dictionary:
+                pass
+            else:
+                print(recipe_dictionary['label'])
             for i in recipe:
                 print(i)
         else:
             print("no results")
 
-
-
-        #if(count <= numberOfIngredients):
-
+        # if(count <= numberOfIngredients):
 
         print()
 
@@ -54,14 +54,15 @@ def list_recipes():
             print
             "found"'''
 
-        #print(ing)
+        # print(ing)
     '''for recipe in recipe_dictionary:
             ingredient_dictionary = recipe['ingredients']
             #ingredient_dictionary = ingr['ingredients']
             print(ingredient_dictionary["food"])
         print(ingredient_dictionary)'''
-        #print(recipe_dictionary['ingredients'])
-        #print()
+    # print(recipe_dictionary['ingredients'])
+    # print()
+
 
 def getIngredients(recipe_dictionary):
     for ingr in recipe_dictionary:
@@ -71,17 +72,10 @@ def getIngredients(recipe_dictionary):
 
 list_recipes()
 
-
-
-
-
-
-
 '''print(recipe.calories)
     print(recipe.cautions, recipe.dietLabels, recipe.healthLabels)
     print(recipe.url)
     print(recipe.ingredient_quantities)'''
-
 
 '''for nutrient_data in e.search_nutrient("2 egg whites"):
     print(nutrient_data)
