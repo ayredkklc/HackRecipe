@@ -7,7 +7,6 @@ foodname = input('What food are you craving? ')
 
 yourIngredients = [item for item in input("Enter the ingredients that you want to use : ").split()]
 
-#numbr= input('how many recipes d o')
 print('Recipes that match your ingredient ')
 print()
 
@@ -21,48 +20,49 @@ def list_recipes():
 
         ing = recipe_dictionary['ingredients']
         count = 0
-        recipe = []
+        recipe = [0] * len(ing)
+
         for i in range(len(ing)):
-            if ing[i]['text'] not in recipe:
-                recipe.append(ing[i]['text'])
-                #count += 1
+            recipe[i] = ing[i]['text']
 
         for x in yourIngredients:
             for y in range(len(recipe)):
                 if x in recipe[y]:
-                    count+=1
+                    count += 1
                     break
                 else:
                     continue
 
         if count == len(yourIngredients):
-            print()
-            print(recipe_dictionary['label'])
-
+            if not recipe_dictionary:
+                pass
+            else:
+                print(recipe_dictionary['label'])
             for i in recipe:
                 print(i)
+        else:
+            print("no results")
 
+        # if(count <= numberOfIngredients):
 
-        #if(count <= numberOfIngredients):
+        print()
 
-
-
-
-    '''for ing in recipe_dictionary['ingredients']:
+        '''for ing in recipe_dictionary['ingredients']:
             ing = recipe_dictionary['ingredients']'''
 
-    '''if ingredientwehave.input in ing:
+        '''if ingredientwehave.input in ing:
             print
             "found"'''
 
-        #print(ing)
+        # print(ing)
     '''for recipe in recipe_dictionary:
             ingredient_dictionary = recipe['ingredients']
             #ingredient_dictionary = ingr['ingredients']
             print(ingredient_dictionary["food"])
         print(ingredient_dictionary)'''
-        #print(recipe_dictionary['ingredients'])
-        #print()
+    # print(recipe_dictionary['ingredients'])
+    # print()
+
 
 def getIngredients(recipe_dictionary):
     for ingr in recipe_dictionary:
@@ -72,17 +72,10 @@ def getIngredients(recipe_dictionary):
 
 list_recipes()
 
-
-
-
-
-
-
 '''print(recipe.calories)
     print(recipe.cautions, recipe.dietLabels, recipe.healthLabels)
     print(recipe.url)
     print(recipe.ingredient_quantities)'''
-
 
 '''for nutrient_data in e.search_nutrient("2 egg whites"):
     print(nutrient_data)
