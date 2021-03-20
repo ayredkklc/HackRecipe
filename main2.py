@@ -7,7 +7,6 @@ foodname = input('What food are you craving? ')
 
 yourIngredients = [item for item in input("Enter the ingredients that you want to use : ").split()]
 
-#numbr= input('how many recipes d o')
 print('Recipes that match your ingredient ')
 print()
 
@@ -40,6 +39,8 @@ def list_recipes():
                 print(i)
         else:
             print("no results")
+
+
 
         #if(count <= numberOfIngredients):
 
