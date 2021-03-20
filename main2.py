@@ -4,8 +4,11 @@ e = Edamam()
 '''data = e.search_recipe("onion")
 hits_dictionary = data['hits']'''
 ingredientwehave = input('Which ingredients do you have? ')
+
+numberOfIngredients = input('enter the total number of ingredients you want to use')
+
 #numbr= input('how many recipies d o')
-print('Recipies that match your ingredient amount')
+print('Recipies that match your ingredient ')
 print()
 
 
@@ -17,11 +20,26 @@ def list_recipes():
         recipe_dictionary = hit['recipe']
         print(recipe_dictionary['label'])
 
+        ing = recipe_dictionary['ingredients']
+        count = 0
 
-        ing = recipe_dictionary['ingredients']['text']
+        recipe = [0] * len(ing)
+        for i in range(len(ing)):
+            recipe[i] = ing[i]['text']
+            count += 1
+            print(recipe[i])
+        #if(count <= numberOfIngredients):
 
+        print()
 
-        print(ing)
+        '''for ing in recipe_dictionary['ingredients']:
+            ing = recipe_dictionary['ingredients']'''
+
+        '''if ingredientwehave.input in ing:
+            print
+            "found"'''
+
+        #print(ing)
     '''for recipe in recipe_dictionary:
             ingredient_dictionary = recipe['ingredients']
             #ingredient_dictionary = ingr['ingredients']
