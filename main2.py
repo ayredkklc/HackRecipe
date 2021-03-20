@@ -18,16 +18,29 @@ def list_recipes():
 
     for hit in hits_dictionary:
         recipe_dictionary = hit['recipe']
-        print(recipe_dictionary['label'])
 
         ing = recipe_dictionary['ingredients']
         count = 0
-
         recipe = [0] * len(ing)
+
         for i in range(len(ing)):
             recipe[i] = ing[i]['text']
-            count += 1
-            print(recipe[i])
+
+        for x in yourIngredients:
+            for y in range(len(recipe)):
+                if x in recipe[y]:
+                    count+=1
+                    break
+                else:
+                    continue
+
+        if count == len(yourIngredients):
+            print(recipe_dictionary['label'])
+            for i in recipe:
+                print(i)
+        else:
+            print("no results")
+
         #if(count <= numberOfIngredients):
 
 
