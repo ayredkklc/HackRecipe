@@ -92,7 +92,18 @@ def calorie_preferences():
         recipe_dictionary = hit['recipe']
         caloriesInRecipe = recipe_dictionary["calories"]
         if(caloriesInRecipe <= calorieAmount):
+            ing = recipe_dictionary['ingredients']
             print(recipe_dictionary['label'])
+            print()
+            recipe = []
+            for i in range(len(ing)):
+                if ing[i]['text'] not in recipe:
+                    recipe.append(ing[i]['text'])
+            for i in recipe:
+                print(i)
+            print()
+            print("Calories: ", recipe_dictionary['calories'])
+            print()
             count += 1
     if count == 0:
         print("dont exist.")
@@ -119,7 +130,11 @@ def number_ingredient_recipies():
     return
 
 
-list_recipes()
+
+
+calorie_preferences()
+#diet_preference()
+#list_recipes()
 
 
 '''for nutrient_data in e.search_nutrient("2 egg whites"):

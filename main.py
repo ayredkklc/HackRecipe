@@ -13,6 +13,7 @@ def print_hi(name):
     x = np.abs(-3)
     print(x)
 
+
 e = Edamam(nutrition_appid="d3356159",
            nutrition_appkey="27ca905147c4ac5ae81237abe28fd4fa",
            recipes_appid="5ec2cdca",
