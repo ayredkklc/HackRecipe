@@ -55,6 +55,7 @@ def by_calories(rlist, calories):
         if current['calories'] > calories:
             rlist.remove(rlist[i])
         else:
+            print("Total Calories: ")
             print(current['calories'])
     return rlist
 
