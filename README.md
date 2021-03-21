@@ -24,7 +24,7 @@ Don't know where to eat?
 Only want recipies that have the amount of ingredients you want, let's say 2 ingredient recipies, collage hack? Say no more
 - [x] User can input the ingredients and total amount of ingredients they want to use and get recipies based on the preference
 
-##Video Walkthrough
+## Video Walkthrough
 
 https://youtu.be/SkFSJP9XYRc
 
