@@ -3,7 +3,7 @@
 HackRecipe is a progragram that solves a your collage meal problem.
 It's a recipe search program that receives a list of ingredients from user and outputs a recipe of a dish with the inputted ingredients
 
-Utilizes the edamam api the return to best results
+Utilizes the edamam api to return the best results
 
 If you are a collage student strugling finding recipies to make from your ingredients or from any preferences you have or just simply don't know where to eat then check out our program.
 
