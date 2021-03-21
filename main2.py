@@ -196,3 +196,33 @@ def diet_preference(rlist):
     return
 
 diet_preference(ex)
+
+
+def number_ingredient_recipies(rlist):
+    #only takes in the amount of ingredients taht you want
+    ingredientAmount = int(input("Enter the amount of ingredients you want to use "))
+    print('Recipes that match your ingredient amount preference ')
+    print()
+    count = 0
+    for i in range(len(rlist)):
+        current = rlist[i]
+        ing = current['ingredients']
+        if len(ing) != ingredientAmount:
+            rlist.remove(rlist[i])
+        else:
+            print(current["label"])
+            print()
+            recipe = []
+            for i in range(len(ing)):
+                if ing[i]['text'] not in recipe:
+                    recipe.append(ing[i]['text'])
+            for i in recipe:
+                print(i)
+                count +=1
+            print()
+            print("Calories: ", current['calories'])
+            print()
+    if count == 0:
+        print("dont exist.")
+    return
+
