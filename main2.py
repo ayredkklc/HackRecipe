@@ -5,13 +5,20 @@ e = Edamam()
 hits_dictionary = data['hits']'''
 foodname = input('What food are you craving? ')
 
-yourIngredients = [item for item in input("Enter the ingredients that you want to use : ").split()]
-numberOfIngredients = input('Enter the total number of ingredients you want to use: ')
+numberOfIngredients = int(input('Enter the total number of ingredients you want to use: '))
+yourIngredients = []
+for i in range(numberOfIngredients):
+    yourIngredients.append(input("Enter the ingredients that you want to use : "))
+
 
 # numbr= input('how many recipes d o')
 print('Recipes that match your ingredient ')
 print()
 
+#yourIngredients = [item for item in input("Enter the ingredients that you want to use : ").split()]
+
+
+#youringredients = re.split(' |,', youringredients)
 
 def list_recipes():
     data = e.search_recipe(foodname)
