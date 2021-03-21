@@ -5,10 +5,11 @@ e = Edamam()
 hits_dictionary = data['hits']'''
 foodname = input('What food are you craving? ')
 
-numberOfIngredients = int(input('Enter the total number of ingredients you want to use: '))
+'''numberOfIngredients = int(input('Enter the total number of ingredients you want to use: '))
 yourIngredients = []
 for i in range(numberOfIngredients):
-    yourIngredients.append(input("Enter the ingredients that you want to use : "))
+    yourIngredients.append(input("Enter the ingredients that you want to use : "))'''
+yourIngredients = [item for item in input("Enter the ingredients that you want to use : ").split()]
 
 data = e.search_recipe(foodname)
 hits_dictionary = data['hits']
@@ -17,15 +18,13 @@ hits_dictionary = data['hits']
 # numbr= input('how many recipes d o')
 
 
-#yourIngredients = [item for item in input("Enter the ingredients that you want to use : ").split()]
-
+#
 
 #youringredients = re.split(' |,', youringredients)
 
 def list_recipes():
 
-    data = e.search_recipe(foodname)
-    hits_dictionary = data['hits']
+
 
     recipeList = []
 
@@ -50,7 +49,7 @@ def list_recipes():
                     continue
 
         if count == len(yourIngredients):
-            print()
+            #print()
             #print(recipe_dictionary['label'])
             recipeList.append(recipe_dictionary)
 
@@ -62,7 +61,8 @@ def list_recipes():
 
 
 
-def by_calories(rlist,  calories):
+def by_calories(rlist):
+    calories = int(input("Enter the max calorie amount you want the recipe to have: "))
     print('Recipes that match your ingredient ')
     print()
     for i in range(len(rlist)):
@@ -81,6 +81,7 @@ def by_calories(rlist,  calories):
                 print(i)
             print()
             print("Calories: ", current['calories'])
+            print("Recipe url: ", current['url'])
             print()
     return rlist
 
@@ -111,8 +112,9 @@ def list_recipes_print():
                     continue
 
         if count == len(yourIngredients):
-
+            print()
             print(recipe_dictionary['label'])
+            print("Recipe url: ", recipe_dictionary['url'])
             recipecount += 1
             for i in recipe:
                 print(i)
@@ -158,11 +160,12 @@ def recipe_roulette(rlist):
         print(i)
     print()
     print("Calories: ", random_recipe['calories'])
+    print("Recipe url: ", random_recipe['url'])
     print()
 
 
-ex = list_recipes()
-recipe_roulette(ex)
+#ex = list_recipes()
+#recipe_roulette(ex)
 
 #random_restaurant_pick()
 
@@ -189,13 +192,14 @@ def diet_preference(rlist):
                     print(i)
                 print()
                 print("Diet labels: ", recipe_dictionary['dietLabels'])
+                print("Recipe url: ", recipe_dictionary['url'])
                 print()
                 count += 1
     if count == 0:
         print("doesn't exist.")
     return
 
-diet_preference(ex)
+#diet_preference(ex)
 
 
 def number_ingredient_recipies(rlist):
@@ -221,8 +225,49 @@ def number_ingredient_recipies(rlist):
                 count +=1
             print()
             print("Calories: ", current['calories'])
+            print("Recipe url: ", current['url'])
             print()
     if count == 0:
         print("dont exist.")
     return
 
+def menu():
+    print()
+    print("Do you have any preferences: (enter a number)")
+    print("1. No just give me the recipies based on my ingredients")
+    print("2. I would like to add a dietery preference")
+    print("3. I would like to add max calories I want the recipe to have")
+    print("4. I have a number of ingredients that I have find me a recipe")
+    print("5. Just pick a random recipe for me I don't want to pick")
+    print("6. I don't want to cook and can't decide what to eat give me a restaurant that is popular amongst collage kids")
+    print("7. Exit. I'm done. Thanks!!")
+    print()
+    inputint = int(input("Enter the number of the menu item youwant to proceed with: "))
+    return inputint
+
+
+#menu()
+
+def runMenu():
+    while True:
+        our_case = menu()
+        print()
+        ex = list_recipes()
+        if our_case == 1:
+            list_recipes_print()
+        elif our_case == 2:
+            diet_preference(ex)
+        elif our_case == 3:
+            by_calories(ex)
+        elif our_case == 4:
+            number_ingredient_recipies(ex)
+        elif our_case == 5:
+            recipe_roulette(ex)
+        elif our_case == 6:
+            restaurant_roulette()
+        elif our_case == 7:
+            return
+        else:
+            print("Enter a valid number.")
+
+runMenu()
