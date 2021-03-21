@@ -13,12 +13,15 @@ You have some ingredients but you dont what to cook?
 - [x] User can search recipies based on what they want to use and the function returns
 - [x] User can search diery restriction and get resipies based on the ingredients and the restrictions
 - [x] User can enter calorie preference and it will return recipies based on your preference
+
 Don't know what to eat?
 - [x] User can get randomly selected meal recipies from your ingreadients choice
+
 Don't know where to eat? 
 - [x] User can get randomly selected restaurant that are popular amongst collage kids
+
 Only want recipies that have the amount of ingredients you want, let's say 2 ingredient recipies, collage hack? Say no more
--[x] User can input the ingredients and total amount of ingredients they want to use and get recipies based on the preference
+- [x] User can input the ingredients and total amount of ingredients they want to use and get recipies based on the preference
 
 ## Notes/Struggles
 ...
